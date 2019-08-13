@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: #fff;
+    color: #555;
+    font-family: 'lato', 'Arial' , sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* This another way to clear floats */
+.clearfix { zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/* ---------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* -------------------------------- */
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+
+}
+section {
+ padding: 80px 0; /* This will create white space between the section and header  */
+}
+.box {
+    padding: 1%;
+}
+
+/* -----------------HEADINGS--------------- */
+
+ h1
+  { /* when using a big font size always decrese the font weight */
+     font-weight: 300;
+     text-transform: uppercase;
+     letter-spacing: 1px; /* this will give space betweenthe letters */
+
+ }
+ h1 {
+     margin-top: 0; /* this will give space between the buttons */
+     margin-bottom: 20px; /* this will give space between the buttons */
+     color: #fff;
+     font-size: 240%;
+     word-spacing: 4px; /* this will give space between the words */
+ 
+ }
+
+  /* ---------------------------- */
+  /* -----------ICONS---------------- */
+  .first-icon{
+      font-size: 350%;
+      display: block;
+      color: #e67e22;
+      margin-bottom: 10px;
+      margin-right: 20px;
+  }
+  .icon-small{
+      display: inline-block;
+      width: 30px;
+      text-align: center;
+      color: #e67e22;
+      font-size: 120%;
+      /* to make the icons line up with the text */
+      line-height: 120%;
+      vertical-align: middle;
+      margin-top: -4px;
+  }
+/* ------------------------------------------------------- */
+/* -----------LINKS---------------------------------------- */
+
+a:link,
+a:visited{
+    color: #e67e22;
+    text-decoration: none;
+    /* this how to create a underline under the link */
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    /* this allows the underline to disppear */
+    transition: border-bottom 0.2s, color 0.2s;
+
+}
+a:hover,
+a:active {
+    /* this is code that once link is hovered the underline disappears */
+    color: #555;
+    border-bottom: 1px solid transparent
+}
+
+  /* ---------------------------------------- */
+ /* ---------------BUTTONS--------------------- */
+ 
+ .btn:link, /* when ever a user vists the link it will stay the same */
+ .btn:visited {
+     display: inline-block;
+     padding: 10px 30px; /* top-bottom, left-right */
+     font-weight: 300;
+     text-decoration: none; /* this gets rid of the underline */
+     border-radius: 200px;
+     transition: background-color 0.2s, border 0.2s, color 0.2s;
+ }
+
+ .btn-full:link,
+ .btn-ful:visited {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+ }
+ .btn-ghost:link,
+ .btn-ghost:visited {
+     border: 1px solid #e67e22;
+     color: #e67e22;
+ }
+ .btn:hover, /* hover : mouse over a button, active: when we click a button */
+ .btn:active {
+    background-color: #cf6d17;
+ }
+ .btn-full:hover,
+ .btn-ful:active {
+    border: 1px solid #e67e22;
+ }
+ .btn-ghost:hover,
+ .btn-ghost:active {
+     border: 1px solid #e67e22;
+     color: #fff;
+ }
+
+ /* -------------------------------------------- */
+ /* HEADER */
+ /* ---------------------------------------------- */
+ header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(img/hero.jpg); /* we are making the image darker so we can see the text , the liner-gradient is like adding two background images  added a black color on top of the image*/
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.hero-txt-box {
+    position: absolute; /* this will vertically and horizatally center it */
+    width: 1140px; /* assign the width of the row */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* this applies a 2D or 3D transformation to the element , rotate, scale or move , skew in this case width and height up to the left */
+}
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+ .main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+
+}
+.main-nav li a:link, /* This is where I decorat my nav buttons  */
+.main-nav li a:visited {
+     padding: 8px 0; /* this created space between the orange line and the links  */
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+   border-bottom: 2px solid transparent;  /* transparent attribute only shows the underline once clicked   */
+   transition:border-bottom 0.2s;
+}
+.main-nav li a:hover, /* This is where I decorat my nav buttons  */
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+/* --------------------------------------- */
+/* SIGNUP PAGE */
+/* --------------------------------------- */
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
