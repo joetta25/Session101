@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 var SequelizeStore = require('connect-session-sequelize')(session.store);
  
 //connect sequlize session to our DB
-
+//
  var myStore = new SequelizeStore({
      db: db.sequelize
  });
