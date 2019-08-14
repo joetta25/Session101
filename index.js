@@ -1,20 +1,24 @@
 var express = require('express');
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
 var db = require('./models');
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 
 
+
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
+// Serving Static files 
+app.use(express.static('public'));
+
 //initialize connect-session-sequelize
 
-var SequelizeStore = require('connect-session-sequelize')(session.store);
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
  
 //connect sequlize session to our DB
-
+//
  var myStore = new SequelizeStore({
      db: db.sequelize
  });
@@ -22,7 +26,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.store);
 
 
 // I am setting the store up to use myStore where we connect the DB details
-
+app.use(cookieParser());
 app.use(session({
     secret: 'mySecret',
     resave: false,
@@ -31,16 +35,13 @@ app.use(session({
 }));
 
 myStore.sync();
-
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 // SETTING UP EJS
 app.set('view engine','ejs');
 app.set('views', 'app/views');
 
-
-// Serving Static files 
-app.use(express.static('public'));
 
 // Setting up the routes 
 
